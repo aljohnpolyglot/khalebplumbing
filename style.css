@@ -70,14 +70,26 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none; /* removes underline from the link */
+    color: inherit; /* keeps text color consistent */
+}
 
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
