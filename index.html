@@ -14,7 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -47,7 +49,10 @@
             <p class="hero-subtitle">Barado at umaapaw na inidoro? Nakakayamot na mabahong amoy? Nagseservice po kami!</p>
             <a href="tel:09272218560" class="cta-button">
                 <i class="fas fa-phone"></i> Call Us: 0927 221 8560
+            
             </a>
+            <!-- Metro.manila, Bataan, zambales -->
+
         </div>
     </section>
 
@@ -118,10 +123,69 @@
                 </div>
             </div>
         </div>
-    </section>
+        <div class="video-gallery-container">
+            <div class="section-header">
+                <h2>See Our Work In Action!</h2>
+                <p>Watch how we efficiently handle common plumbing issues, ensuring a clean and hassle-free service.</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-wrapper reveal">
+                    <video controls muted autoplay loop poster="images/video-poster-1.jpg">
+                        <source src="videos/sample_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Efficient Septic Tank Siphoning</p>
+                </div>
+                <!-- You can add more videos here if you have them. Example: -->
+                <!-- <div class="video-wrapper reveal">
+                    <video controls muted loop poster="images/video-poster-2.jpg">
+                        <source src="videos/another_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Clogged Drain Clearing Process</p>
+                </div> -->
+            </div>
+        </div>
+    </div> <!-- Close container for services section -->
+</section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section container">
+</section>
+
+<!-- Interactive Map Section -->
+<section id="service-map" class="service-map-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Service Coverage Map</h2>
+            <p>We proudly serve a wide range of locations. Click on a highlighted area for more information.</p>
+        </div>
+        <div id="mapid" class="map-container reveal"></div>
+        
+        <!-- Retained availability cards as a legend/summary -->
+        <div class="availability-grid">
+            <div class="area-card reveal">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Metro Manila</h3>
+                <p>All cities and municipalities within the National Capital Region, ensuring fast response times.</p>
+            </div>
+            <div class="area-card reveal">
+                <i class="fas fa-map-pin"></i>
+                <h3>Bataan</h3>
+                <p>Comprehensive plumbing services across the entire province of Bataan, including Balanga and Mariveles.</p>
+            </div>
+            <div class="area-card reveal">
+                <i class="fas fa-location-arrow"></i>
+                <h3>Zambales</h3>
+                <p>Extensive coverage throughout Zambales, reaching areas like Olongapo, Subic, and Castillejos.</p>
+            </div>
+        </div>
+        <p class="availability-note reveal">If your area is not listed, please call us to inquire about our extended service range!</p>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section container">
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section container">
         <div class="section-header">
             <h2>What Our Clients Say</h2>
             <p>We are proud to be trusted by homeowners across the area.</p>
@@ -180,6 +244,7 @@
 
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script src="map.js"></script>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -188,10 +253,12 @@
           "image": "images/logo.png",
           "telephone": "+639272218560",
          
-          "address": { Philippines
-         
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Metro Manila, Bataan, Zambales",
+            "addressCountry": "PH"
           },
-          "url": "khalebplumbing.com",
+          "url": "https://khalebplumbing.com",
           "sameAs": [
             "https://www.facebook.com/profile.php?id=61561175008252"
           ],
@@ -205,17 +272,32 @@
                 "Wednesday",
                 "Thursday",
                 "Friday",
-                "Saturday"
+                "Saturday",
                 "Sunday"
               ],
               "opens": "00:00",
               "closes": "00:00"
             }
           ],
-          "addressCountry"": [
+          "areaServed": [
+            {
+              "@type": "AdministrativeArea",
+              "name": "Metro Manila"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Bataan"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Zambales"
+            }
+          ]
+        
+        "addressCountry"": [
             Philippines
           ]
-        }
+        }   
         </script>
 </body>
 </html>

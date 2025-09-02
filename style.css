@@ -207,7 +207,7 @@ body {
 
 /* --- Services Section --- */
 .services-section {
-    padding: 6rem 0;
+    /* padding-: 6rem 0; */
     background-color: var(--light-color);
 }
 
@@ -254,7 +254,7 @@ body {
 
 /* --- Testimonials Section --- */
 .testimonials-section {
-    padding: 6rem 0;
+    padding-bottom: 6rem;
 }
 
 .testimonials-grid {
@@ -381,5 +381,242 @@ body {
 
     .features-grid, .services-grid, .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+}
+/* --- Video Gallery Section --- */
+.video-gallery-container {
+    padding: 6rem 0;
+    background-color: var(--light-color); /* Matches services section bg */
+    text-align: center;
+}
+
+.video-gallery-container .section-header {
+    margin-bottom: 3rem; /* Adjust header margin for videos */
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px; /* Constrain video width */
+    margin: 0 auto; /* Center the grid */
+}
+
+.video-wrapper {
+    background-color: var(--white-color);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Slightly rounded video edges */
+}
+
+.video-caption {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+
+/* --- Geography of Availability Section --- */
+.availability-section {
+    padding: 6rem 0;
+    background-color: var(--white-color); /* Contrast with services/video sections */
+}
+
+.availability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.area-card {
+    background: var(--light-color);
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--primary-color);
+}
+
+.area-card:hover {
+    transform: translateY(-10px);
+}
+
+.area-card i {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.area-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.area-card p {
+    color: var(--grey-color);
+}
+
+.availability-note {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    color: var(--grey-color);
+    font-style: italic;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* Responsive adjustments for video and availability */
+@media (max-width: 768px) {
+    .video-gallery-container {
+        padding: 4rem 0;
+    }
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    .availability-section {
+        padding: 4rem 0;
+    }
+    .availability-grid {
+        grid-template-columns: 1fr;
+    }
+    .area-card {
+        padding: 2rem 1.5rem;
+    }
+}
+/* Add to your style.css */
+.service-map-section {
+    padding: 6rem 0;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+#mapid {
+    height: 500px; /* Adjust as needed */
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin: 0 auto 2rem;
+}
+
+.map-container {
+    /* Optional: Add a subtle border or background if map doesn't fill entirely */
+    background-color: #e0e0e0;
+    overflow: hidden; /* Ensures border-radius applies well */
+}
+
+.map-note {
+    font-size: 1rem;
+    color: var(--grey-color);
+    font-style: italic;
+}
+
+/* Leaflet custom styles for highlighted regions */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+.leaflet-popup-content {
+    padding: 10px 15px;
+    font-family: 'Poppins', sans-serif;
+}
+.leaflet-popup-content h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+.leaflet-popup-content p {
+    margin-bottom: 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    #mapid {
+        height: 350px;
+    }
+}/* --- Interactive Map Section --- */
+.service-map-section {
+    padding: 6rem 0;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.service-map-section .section-header {
+    margin-bottom: 3rem;
+}
+
+.map-container {
+    height: 500px; /* Adjust as needed */
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin: 0 auto 2rem;
+    background-color: #e0e0e0; /* Fallback/background for map tiles loading */
+    overflow: hidden; /* Ensures border-radius is applied correctly */
+}
+
+/* Specific styles for Leaflet popups */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    padding: 0; /* Remove default Leaflet padding for custom content */
+}
+.leaflet-popup-content {
+    padding: 10px 15px;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
+.leaflet-popup-content h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+.leaflet-popup-content p {
+    margin-bottom: 10px; /* Space between description and button */
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: var(--dark-color);
+}
+.leaflet-popup-content .popup-cta-button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.leaflet-popup-content .popup-cta-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+
+/* Responsive adjustments for map */
+@media (max-width: 768px) {
+    .map-container {
+        height: 350px;
     }
 }
