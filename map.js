@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
         function featureStyle(feature) {
             const provinceName = feature.properties.PROVINCE;
             const regionName = feature.properties.REGION; // Used for Metro Manila
-
+        
             // Check if the municipality is within a serviced province/region
-            if (provinceName === 'Bataan' || provinceName === 'Zambales' || regionName === 'Metropolitan Manila') {
-                return serviceAreaStyle;
+            if (provinceName === 'Bataan' || provinceName === 'Zambales' || regionName === 'Metropolitan Manila' || provinceName === 'Pampanga') {
+                return serviceAreaStyle; // This will now apply to Pampanga
             }
             return defaultStyle;
         }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const province = feature.properties.PROVINCE || feature.properties.NAME_1; // Get province name
                 const region = feature.properties.REGION;
 
-                const isServiceArea = (province === 'Bataan' || province === 'Zambales' || region === 'Metropolitan Manila');
+                const isServiceArea = (province === 'Bataan' || province === 'Zambales' || region === 'Metropolitan Manila' || province === 'Pampanga');
 
                 let serviceStatus = isServiceArea ? '<span style="color:#007BFF; font-weight:bold;">Service Area</span>' : 'Not a primary service area';
                 if (province === 'Metropolitan Manila') { // Adjust for how Metro Manila municipalities are structured
